@@ -379,6 +379,174 @@ const textNodes = [
                nextText: 250
            }
        ] 
+    },
+    {
+        id: 201,
+        text: 'After searching for nearly an hour, you are tired but you have found the Ramblin Wreck. Lets see what it has to offer.',
+        options: [
+            {
+                text: 'Search the Ramblin Wreck',
+                nextText: 260
+            }
+        ]
+    },
+    {
+        id: 210,
+        text: 'You need to call a stinger or find out where the nearest Tech Trolley is. Do you have a phone?',
+        options: [
+            {
+                text: 'Yes I do.',
+                requiredState: (currentState) => currentState.Phone,
+                nextText: 211
+            },
+            {
+                text: 'No I do not.',
+                requiredState: (currentState) => !currentState.Phone,
+                nextText: 212
+            }
+        ]
+    },
+    {
+        id: 211, 
+        text: 'It takes too long and by then you give up.',
+        options: [
+            {
+                text: 'Restart.',
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 212,
+        text: 'No phone, no go. Without a phone the only sensible thing left to do is give up.',
+        options: [
+            {
+                text: 'Restart.',
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 220,
+        text: 'You slip on the horrid granite pathway that is Techwood Drive and nearly miss getting hit by a car. You realize you are not built for this life, decide to call it a quits, and you limp back home.',
+        options: [
+            {
+                text: 'Restart, Hope you feel better.',
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 230,
+        text: 'Ya know, these things are not free. Do you have your wallet on you.',
+        options: [
+            {
+                text: 'Yes, yes I do.',
+                requiredState: (currentState) => currentState.wallet,
+                nextText: 231
+            },
+            {
+                text: 'No, no I do not.',
+                requiredState: (currentState) => !currentState.wallet,
+                nextText: 232
+            }
+        ]
+    },
+    {
+        id: 231,
+        text: 'After searching for nearly an hour you are all out of money, but you have found the Ramblin Wreck. Lets see what it has to offer.',
+        options: [
+            {
+                text: 'Search the Ramblin Wreck',
+                nextText: 260
+            }
+        ]
+    },
+    {
+        id: 232,
+        text: 'With not a dime to your name you decide to give up. You are already in debt to Georgia Tech, why be in debt to some random scooter company as well?',
+        options: [
+            {
+                text: "Restart, at least this won't cost you anything.",
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 240,
+        text: 'Do you have a cellular device with which you can call said friend?',
+        options: [
+            {
+                text: "Yes, who doesn't have one nowadays.",
+                requiredState: (currentState) => currentState.Phone,
+                nextText: 241
+            },
+            {
+                text: 'No, I forgot to grab it.',
+                requiredState: (currentState) => !currentState.Phone,
+                nextText: 242
+            }
+        ]
+    },
+    {
+        id: 241,
+        text: 'The two of you drive around campus in search of the Ramblin Wreck. You spot it almost instantly. You offer here the opportunity to go down in history with you, but she declines and wishes you the best of luck. Oh well, time to see what the Ramblin Wreck has to offer.',
+        options: [
+            {
+                text: 'Search the Ramblin Wreck.',
+                nextText: 260
+            }
+        ]
+    },
+    {
+        id: 242,
+        text: "You can't call your friend and walking around campus in search of this car would take too much of your precious time. You have better things to do, like go home and realize how under-prepared you are for your CS test tomorrow.",
+        options: [
+            {
+                text: 'No amount of studying could help you at this point. You might as well Restart.',
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 250,
+        text: 'Do you have your Buzz Bible?',
+        options: [
+            {
+                text: 'Yes I do.',
+                requiredState: (currentState) => currentState.BuzzBible,
+                nextText: 251
+            },
+            {
+                text: 'no I do not.',
+                requiredState: (currentState) => !currentState.BuzzBible,
+                nextText: 252
+            }
+        ]
+    },
+    {
+        id: 251,
+        text: 'Buzz of the Past tells you where the Ramblin Wreck is. But he also tells you that if you know the secret code to open any Tech door, he can can transport you to the Tower directly without any interference.',
+        options: [
+            {
+                text: 'Yes I know the code.',
+                
+            },
+            {
+                text: 'No, I do not know what the code is. Go to the Ramblin Wreck and see what it has to offer.',
+                nextText: 260
+            }
+        ]
+    },
+    {
+        id: 252,
+        text: 'You cannot invoke the Tech spirit and you go home.',
+        options: [
+            {
+                text: 'Restart',
+                nextText: -1
+            }
+        ]
     }
     
 ]
