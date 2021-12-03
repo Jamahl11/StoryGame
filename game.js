@@ -533,33 +533,24 @@ const textNodes = [
     },
     {
         id: 251,
-        text: 'Buzz of the Past tells you where the Ramblin Wreck is. But he also tells you that if you know the secret code to open any Tech door, he can can transport you to the Tower directly without any interference.',
+        text: 'Buzz of the Past knows where the Rambin Wreck, but he sees your Buzz Bible and offersto transport you to the top of Tech Tower directly. You the steal the T and go down in history. Not too shabby kid.',
         options: [
             {
-                text: 'Yes I know the code.',
-                nextText: 253
+                text: 'Restart.',
+                nextText: -1
 
-            },
-            {
-                text: 'No, I do not know what the code is. Go to the Ramblin Wreck and see what it has to offer.',
-                nextText: 260
             }
         ]
     },
     {
         id: 252,
-        text: 'You cannot invoke the Tech spirit and you go home.',
+        text: 'Buzz commands you to leave before he spites you.',
         options: [
             {
-                text: 'Restart',
-                nextText: -1
+                text: 'Choose another way to find a Ramblin Wreck.',
+                nextText: 200
             }
         ]
-    },
-    {
-        id: 253,
-        text:'Whats the code young one?'
-
     },
     {
         id: 260,
