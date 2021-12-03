@@ -116,6 +116,7 @@ const textNodes = [
         ]
     },
     {
+        //number 4
         id: 77,
         text: "The TA's were unfornutately of no help. You ended up stressing even more about the lack of studying you have done. You suddenly have a heart attack and die on the spot.",
         options: [
