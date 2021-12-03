@@ -41,6 +41,7 @@ function selectOption(option) {
 
 const textNodes = [
     {
+        //NUMBER 1
         id:1,
         text: 'Welcome to the Tech Tower Heist. Do you wish to play.',
         options: [
@@ -55,6 +56,7 @@ const textNodes = [
         ]
     },
     {
+        //NUMBER 2
         id: 2,
         text: 'Too bad play again.',
         options: [
@@ -65,6 +67,7 @@ const textNodes = [
         ]
     },
     {
+        //NUMBER 3
         id: 6,
         text: 'Choose an item to take with you.',
         options: [
@@ -87,9 +90,10 @@ const textNodes = [
                 text: 'Take nothing.',
                 nextText: 7
             }
-        ] 
+        ]
     },
     {
+        //I LIKE BIG BUTTERFLIES AND I CANNOT LIE
         id: 7,
         text: 'Where do you wish to go next to uncover clues for your heist.',
         options: [
@@ -112,6 +116,7 @@ const textNodes = [
         ]
     },
     {
+        //number 4
         id: 77,
         text: "The TA's were unfornutately of no help. You ended up stressing even more about the lack of studying you have done. You suddenly have a heart attack and die on the spot.",
         options: [
@@ -199,6 +204,7 @@ const textNodes = [
         ]
     },
     {
+        //pizza
         id: 105,
         text: "The student pulls a scroll from his trenchcoat, its a plan that leads you to the Ramblin Wreck. You say thank you and your on your way, one step closer to the T.",
         options: [
@@ -209,6 +215,7 @@ const textNodes = [
         ]
     },
     {
+        //pizza
         id: 106,
         text: 'The student gives you a blueprint that leads you to Tech Green.',
         options: [
@@ -315,7 +322,7 @@ const textNodes = [
                 nextText: 101
             }
         ]
-    }, 
+    },
     {
         id: 180,
         text: 'Upon arrival, you spot the head coach. Rumor has it he was in on the last successful Tech Tower heist, however he came clean in order to get his job as the coach. You also notice Buzz in the stands, who has authorized access to places others do not. Who do you wish to talk to?',
@@ -378,7 +385,7 @@ const textNodes = [
                text: 'Pray to the sacred Buzz Bible.',
                nextText: 250
            }
-       ] 
+       ]
     },
     {
         id: 201,
@@ -407,7 +414,7 @@ const textNodes = [
         ]
     },
     {
-        id: 211, 
+        id: 211,
         text: 'It takes too long and by then you give up.',
         options: [
             {
@@ -531,7 +538,7 @@ const textNodes = [
             {
                 text: 'Yes I know the code.',
                 nextText: 253
-                
+
             },
             {
                 text: 'No, I do not know what the code is. Go to the Ramblin Wreck and see what it has to offer.',
@@ -579,7 +586,7 @@ const textNodes = [
         id: 261,
         text: "You use the excuse of wanting to take a close photo from the top of Tech Tower. You use a rope to get "
     }
-    
+
 ]
 
 
