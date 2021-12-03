@@ -570,7 +570,7 @@ const textNodes = [
             },
             {
                 text: 'A janitor disguise.',
-                setState: {janitorDisguise:rue},
+                setState: {janitorDisguise:true},
                 id: 263
             }
         ]
