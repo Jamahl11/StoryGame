@@ -584,10 +584,24 @@ const textNodes = [
     },
     {
         id: 261,
-        text: "You use the excuse of wanting to take a close photo from the top of Tech Tower. You use a rope to get "
+        text: "You use the excuse of wanting to take a close photo from the top of Tech Tower." +
+         " You use a rope to get to the real T by going through the last few steps of the secret path in the map and successfully" +
+         "switch the real T with the fake one. Then you leave without anyone noticing. Congrats, your name will go down in history,.... and the GT wiki."
+    },
+    {
+        id: 262,
+        text: "You try to scale the tower using the secret path in the map but someone ends up catching you and turning you in." +
+        "Sorry kid better luck next time."
+    },
+    {
+        id: 263,
+        text: "You use the excuse of being a janitor to get in. The guards believe you and get you through. You use a rope to get" +
+        " to the real T by going through the last few steps of the secret path in the map and succussfully switch the real T" +
+        " with the fake one. Then you leave without anyone noticing. Congrats, you name will go down in history,.... and the GT wiki."
     }
-
+    
 ]
+
 
 
 startGame()
