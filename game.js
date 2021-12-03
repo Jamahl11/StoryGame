@@ -530,6 +530,7 @@ const textNodes = [
         options: [
             {
                 text: 'Yes I know the code.',
+                nextText: 253
                 
             },
             {
@@ -547,6 +548,36 @@ const textNodes = [
                 nextText: -1
             }
         ]
+    },
+    {
+        id: 253,
+        text:'Whats the code young one?'
+
+    },
+    {
+        id: 260,
+        text: 'Which item do you wish to take?',
+        options: [
+            {
+                text: 'A fake T.',
+                setState: {fakeT: true},
+                id: 261
+            },
+            {
+                text: 'Climbing Gear',
+                setState: {climbingGear: true},
+                id: 262
+            },
+            {
+                text: 'A janitor disguise.',
+                setState: {janitorDisguise:rue},
+                id: 263
+            }
+        ]
+    },
+    {
+        id: 261,
+        text: "You use the excuse of wanting to take a close photo from the top of Tech Tower. You use a rope to get "
     }
     
 ]
