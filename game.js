@@ -163,6 +163,10 @@ const textNodes = [
             {
                 text: 'Of Course',
                 nextText: 17
+            },
+            {
+                text: "No, I'm not feeling too lucky today.",
+                nextText: 283
             }
         ]
     },
@@ -800,7 +804,7 @@ const textNodes = [
        options: [
            {
                text: 'Use skateboard and go around campus searching.',
-               nextText: 201
+               nextText: 202
            },
            {
             text: 'Take the Tech Trolly.',
@@ -827,27 +831,39 @@ const textNodes = [
             nextText: 231
            },
            {
-               text: 'Call your frined who drives.',
-               nextText: 240
+            text: "Call your friend who has a car, because he ain't poor like you.",
+            requiredState: currentState => currentState.Phone,
+            nextText: 240
+           },
+           {
+               text: "Call your friend who has a car, because he ain't poor like you.",
+               requiredState: currentState => !currentState.Phone,
+               nextText: 241
            },
            {
                text: 'Pray to the sacred Buzz Bible.',
+               requiredState: currentState => currentState.BuzzBible,
                nextText: 250
+           },
+           {
+               text: 'Pray to the sacred Buzz Bible.',
+               requiredState: currentState => !currentState.BuzzBible,
+               nextText: 251
            }
        ]
     },
     {
-        id: 201,
+        id: 202,
         text: '“Hey Jamahl!” You yell to your friend. He changes his direction and stops next to you.\n\n“Hey, what’s up?”he replies.\n\n“Can I borrow your skateboard? I need to find the Ramblin Wreck.”',
         options: [
             {
                 text: 'Continue.',
-                nextText: 202
+                nextText: 203
             }
         ]
     },
     {
-        id: 202,
+        id: 203,
         text: 'He thinks over this for a moment and then shrugs.\n\n“Sure. Just bring it back to the College of Computing when you’re done.”\n\n“Thank you!” You say before zipping off to find the Ramblin Wreck.',
         options: [
             {
@@ -908,95 +924,67 @@ const textNodes = [
     },
     {
         id: 230,
-        text: 'Ya know, these things are not free. Do you have your wallet on you.',
+        text: 'You bring out your wallet and grit your teeth as you spend your meager funds on renting the scooter. But the T will be worth it and all your problems will be fixed. You zip away.',
         options: [
             {
-                text: 'Yes, yes I do.',
-                requiredState: (currentState) => currentState.wallet,
-                nextText: 231
+                text: 'Continue.',
+                nextText: 260
             },
-            {
-                text: 'No, no I do not.',
-                requiredState: (currentState) => !currentState.wallet,
-                nextText: 232
-            }
         ]
     },
     {
         id: 231,
-        text: 'After searching for nearly an hour you are all out of money, but you have found the Ramblin Wreck. Lets see what it has to offer.',
+        text: "You don't have your wallet! And you’ve just missed your friend with a skateboard and the trolley. In despair, you give up and go home.",
         options: [
             {
-                text: 'Search the Ramblin Wreck',
-                nextText: 260
-            }
-        ]
-    },
-    {
-        id: 232,
-        text: 'With not a dime to your name you decide to give up. You are already in debt to Georgia Tech, why be in debt to some random scooter company as well?',
-        options: [
-            {
-                text: "Restart, at least this won't cost you anything.",
+                text: 'Restart',
                 nextText: -1
             }
         ]
     },
     {
         id: 240,
-        text: 'Do you have a cellular device with which you can call said friend?',
+        text: 'You pull out your phone and dial your friend’s number. They pick up.\n\n“Hello?”',
         options: [
             {
-                text: "Yes, who doesn't have one nowadays.",
-                requiredState: (currentState) => currentState.Phone,
-                nextText: 241
-            },
-            {
-                text: 'No, I forgot to grab it.',
-                requiredState: (currentState) => !currentState.Phone,
+                text: "Continue.",
                 nextText: 242
             }
         ]
     },
     {
         id: 241,
-        text: 'The two of you drive around campus in search of the Ramblin Wreck. You spot it almost instantly. You offer here the opportunity to go down in history with you, but she declines and wishes you the best of luck. Oh well, time to see what the Ramblin Wreck has to offer.',
+        text: "You don't have your wallet! And you’ve just missed your friend with a skateboard and the trolley. The scooters are also all rented out by now. In despair, you give up and go home.",
         options: [
             {
-                text: 'Search the Ramblin Wreck.',
-                nextText: 260
-            }
-        ]
-    },
-    {
-        id: 242,
-        text: "You can't call your friend and walking around campus in search of this car would take too much of your precious time. You have better things to do, like go home and realize how under-prepared you are for your CS test tomorrow.",
-        options: [
-            {
-                text: 'No amount of studying could help you at this point. You might as well Restart.',
+                text: 'Restart',
                 nextText: -1
             }
         ]
     },
     {
-        id: 250,
-        text: 'Do you have your Buzz Bible?',
+        id: 242,
+        text: "“Hey Nivi! I have a favor to ask of you.”\n\n“Sure! What’s up?”\n\n“I need a ride to Tech Square. You have a car today right?”\n\n“Yeah, I can pick you up in a few minutes. I was just heading home anyway.”\n\n“Thanks!”\n\nNivi comes in a couple of minutes and drops you off at Tech Square.",
         options: [
             {
-                text: 'Yes I do.',
-                requiredState: (currentState) => currentState.BuzzBible,
-                nextText: 251
-            },
-            {
-                text: 'no I do not.',
-                requiredState: (currentState) => !currentState.BuzzBible,
-                nextText: 252
+                text: 'Continue.',
+                nextText: 260
             }
         ]
     },
     {
+        id: 250,
+        text: 'You take out your Buzz Bible and flip to the first page. Immediately a glow surrounds the whole book, blinding you. You look around to see if anyone else noticed, but no one seems to be stopping or looking in your direction.\n\nYou flinch as a figure rises from the mist of the light and your lips move in awe.\n\n“B-Buzz?” you ask in amazement. “You’re glowing! Do you have magic?”',
+        options: [
+            {
+                text: 'Continue',
+                nextText: 252
+            },
+        ]
+    },
+    {
         id: 251,
-        text: 'Buzz of the Past knows where the Rambin Wreck, but he sees your Buzz Bible and offersto transport you to the top of Tech Tower directly. You the steal the T and go down in history. Not too shabby kid.',
+        text: "You don't have your Buzz Bible! And you’ve just missed your friend with a skateboard and the trolley. The scooters are also all rented out by now. In despair, you give up and go home.",
         options: [
             {
                 text: 'Restart.',
@@ -1007,12 +995,54 @@ const textNodes = [
     },
     {
         id: 252,
-        text: 'Buzz commands you to leave before he spites you.',
+        text: 'Buzz looks at you with an ethereal glance. “I am not the Buzz you know and are familiar with. I am Buzz of the Past.” Buzz’s voice is operative, with a multitude of voices blending together disconcertingly. “I have been summoned by your desperation to complete this mission. The Ramblin Wreck is at Tech Square near the Barnes and Noble bookstore. But I can help you even more if you do one thing.”\n\n“And-,” you clear your throat so that your voice no longer squeaks. “And what’s that?”',
         options: [
             {
-                text: 'Choose another way to find a Ramblin Wreck.',
-                nextText: 200
+                text: 'Continue',
+                nextText: 253
+            },
+        ]
+    },
+    {
+        id: 253,
+        text: '“Answer one question, a riddle of sorts. If you answer correctly, then I will transport you successfully to the tower with no more obstacles in your path.”\n\nYou think for a moment before nodding your head. This way will be faster if you answer correctly. “What is your question?”\n\n“In addition to the "Ramblin Wreck", there are two othe wrecks. What is the name of one of them?”',
+        options: [
+            {
+                text: 'The Alumni Wreck',
+                nextText: 254
+            },
+            {
+                text: 'The Stadium Wreck',
+                nextText: 255
+            },
+            {
+                text: 'The Burdell Wreck',
+                nextText: 255
+            },
+            {
+                text: 'The Georgia Tech Hotel Wreck',
+                nextText: 254
             }
+        ]
+    },
+    {
+        id: 254,
+        text: '“You have answered the question correctly!” Buzz says, light glowing even brighter. “Good luck to you. You will be transported in a second.” With a flash of blinding light you feel your body float above the clouds. You close your eyes in fear, but in a second, you find yourself standing on Tech Tower, within reach of the T. Next to you, you see a bunch of tools for sculpting out the T and keeping you safe while you climb the tower.',
+        options: [
+            {
+                text: 'Continue',
+                nextText: 280
+            },
+        ]
+    },
+    {
+        id: 255,
+        text: '“You don’t have the correct answer, so I cannot help you to the full extent. But I wish you luck with finding the Ramblin Wreck at Tech Square and successfully stealing the T.” Buzz vanishes from your eyes and you are magically transported to Tech Square.',
+        options: [
+            {
+                text: 'Continue',
+                nextText: 260
+            },
         ]
     },
     {
@@ -1037,16 +1067,113 @@ const textNodes = [
             {
                 text: 'Take climbing Gear.',
                 setState: {climbingGear: true},
-                nextText: 262
+                nextText: 264
             },
             {
                 text: 'Take janitor disguise.',
                 setState: {janitorDisguise: true},
-                text: 262
+                text: 268
             }
         ]
     },
-    
+    {
+        id: 262,
+        text: 'You head up to the main entrance and nod at the security guard there. She gives you a suspicious look but you keep a cheery demeanor as you approach.\n\n“Hello there! How is your day going?” She looks confused at your cheery demeanor.\n\n“Good. What are you doing here?” Her tone is tough, containing no amusement.',
+        options: [
+            {
+                text: 'Continue.',
+                nextText: 263
+            }
+        ]
+    },
+    {
+        id: 263,
+        text: 'You hold up the“T” that you got from the Ramblin Wreck. “I’m a design student and I’m recreating the block letters  from Tech Tower for my Project. I wanted to compare the size of this T to the actual T so that I can make a replica for my project.” The guard looks at you suspiciously and for a moment you think you’re done for.\n\n“Sure, what do I care?” she finally says. “Just don’t take too long. We were warned that some action might go down tonight so be in and out quickly.” You nod in gratitude and slip inside. Once you enter and reach the top floor, you look around and find some rope to safely secure you as you complete your mission.',
+        options: [
+            {
+                text: 'Continue.',
+                nextText: 280
+            }
+        ]
+    },
+    {
+        id: 264,
+        text: 'You go around the perimeter and attempt to avoid the guards as you walk past. You look for a good spot to start your ascent when you hear footsteps approaching. You curse under your breath as you crouch behind a clump of bushes and push down your climbing gear.\n\nThrough the vegetation of the bushes, you see two guards walking by.',
+        options: [
+            {
+                text: 'Continue.',
+                nextText: 265
+            }
+        ]
+    },
+    {
+        id: 265,
+        text: '“I can’t believe they called our whole squad this whole way just for the threat of having a student attempt to steal the T again. What’re they, paranoid that they’ll lose a stupid chunk of metal.”\n\n“Watch your mouth! That’s sacrilege and you could be thrown off the squad for saying things like that.”\n\n“Jeez, keep your pants on. I’m only saying this because I have a date tonight and I’d rather be prepping for that than be out here.” Their voices fade as they walk away.',
+        options: [
+            {
+                text: 'Continue.',
+                nextText: 266
+            }
+        ]
+    },
+    {
+        id: 266,
+        text: 'You curse again. This part was going to be harder than  you thought, it seemed. You would have to be fast and there would be no room for errors.\n\nYou start climbing, using your gear to grab onto the wall and stepping carefully on the stones with your climbing shoes. They made several clinks, but hopefully no one would hear it over the natural sounds around you.\n\nYou make it up to the top and hoist yourself on to the last ledge. You see the T, shining in all its brilliance and there for the taking. But just as you are about to reach for the T, your harness is yanked and you lose your grip on the wall. You yell as you fall towards the ground.',
+        options: [
+            {
+                text: 'Continue.',
+                nextText: 267
+            }
+        ]
+    },
+    {
+        id: 267,
+        text: 'Your head swims and thinks furiously as you spiral towards the hard, unforgiving ground. This is it, you think. This is where it all ends. But as you brace yourself to turn into human pulp, you’re caught by something bouncy.\n\nYou take a deep breath and force your eyes to open. Around you, a dozen security guards are standing with their electric tasers pointed at you. You don’t even care. You’re just happy to be alive. \n\n“You are being charged by the Stealing the T Task Force with the crime of attempting to steal the T from Tech Tower. We have testimony of this act and you have incriminated yourself by attempting.” Your eyes widen as you understand. But at least you’re alive.\n\nYou close your eyes and accept your defeat.',
+        options: [
+            {
+                text: 'So close yet so far, Restart.',
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 268,
+        text: 'You put on your disguise behind a column, quickly and efficiently so that no one sees you. You look at your reflection in a nearby window and wince. You look like a potato, but at least no one will recognize you.\n\nYou walk towards the back door and the guard posted there looks up and down at you. Then, without a word, he grunts and lets you pass. You smile as you make your way to the top of the tower.\n\nOnce you enter and reach the top floor, you look around and find some rope to safely secure you as you complete your mission.',
+        options: [
+            {
+                text: 'Continue.',
+                nextText: 280
+            }
+        ]
+    },
+    {
+        id: 280,
+        text: 'Grinning, you climb and grab ahold of the T, wedging it from it’s position. As soon as you have it in your hands, it starts to glow a brilliant golden light that astounds you and blinds your eyes. Your vision swims and the air around you heats up immensely.',
+        options: [
+            {
+                text: 'Continue.',
+                nextText: 281
+            }
+        ]
+    },
+    {
+        id: 281,
+        text: 'You hear cacophony, a multitude of sounds that overwhelms you and causes your body to convulse. Something is going wrong, horribly wrong. Your head snaps back, making your neck ache.\n\nAnd as soon as the pain begins, it stops. Your heart beats fast as you open your eyes.',
+        options: [
+            {
+                text: 'Continue.',
+                nextText: 282
+            }
+        ]
+    },
+    {
+        id: 282,
+        text: "You're standing in an enormous office. It has a beautiful window with a view that steal’s your breath away. Nearby there is a desk, full of all the things you have ever wanted. Loads of pictures of your friends and family are there and you have the latest devices possible.\n\nYou turn around and notice that several other people are also in the room. They are talking amongst themselves until they realize that you are looking at them. They start clapping immediately.\n\n“CONGRATULATIONS!” They all scream as they pull on confetti. You are exceedingly surprised and confused but you recognize several of your friends in the audience.\n\n“What’s going on?” you ask. They grin at you. \n\n“What do you mean? You finished top of our class and now you’ve landed your dream job! You start it in a month, but they’ve already given you your office.” You take in everything in astonishment. \n\n“What’s even more, you have no student loans to pay! You got a scholarship from your dream company that covered everything. Now all you have to do is sit back and enjoy life.” Your life is…\n\n“Awesome!” You turn to see your idol looking at you with pride and admiration. You can’t believe it. You...were successful?\n\nIn the corner, you see the ghost of George P. Burdell looking at you with pride. He nods in acknowledgement and vanishes. You grin from ear to ear and your heart roars in joy.\n\nYou did it. \n\nYou  DID IT.\n\nYOU DID IT!!!!!!!!!",
+    },
+    {
+        id: 283,
+        text: 'You have chosen to do nothing and have thus been granted reprieve by the Fates. Congrats!'
+    }    
 ]
 
 
