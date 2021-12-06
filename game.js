@@ -914,7 +914,7 @@ const textNodes = [
     },
     {
         id: 220,
-        text: 'You decide to walk to Tech Square. To do so, you need to pass several lights on the  road. As you pass the Delta Upsilon fraternity and step down from the curb to cross the street, you slip on the loose rock and fall. Your eyes widen in horror as you hear a crunch in your ankle.\n\nYou try to stand up, but thee pain is unbearable and you shout in agony. There’s no way you can complete your mission in this condition and you give up, calling out for help to get home.',
+        text: 'You decide to walk to Tech Square. To do so, you need to pass several lights on the  road. As you pass the Delta Upsilon fraternity and step down from the curb to cross the street, you slip on the loose rock and fall. Your eyes widen in horror as you hear a crunch in your ankle.\n\nYou try to stand up, but the pain is unbearable and you shout in agony. There’s no way you can complete your mission in this condition and you give up, calling out for help to get home.',
         options: [
             {
                 text: 'Restart.',
