@@ -263,8 +263,8 @@ const textNodes = [
         text: "“This doesn’t have anything to do with computer science! I cannot answer this question or any other irrelevant topics. You have a final coming up!”",
         options: [
             {
-                text: 'Continue.',
-                nextText: 23
+                text: 'Restart.',
+                nextText: -1
             }
         ]
     },
