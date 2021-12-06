@@ -831,12 +831,12 @@ const textNodes = [
             nextText: 231
            },
            {
-            text: "Call your friend who has a car, because he ain't poor like you.",
+            text: "Call your friend who has a car, because she ain't poor like you.",
             requiredState: currentState => currentState.Phone,
             nextText: 240
            },
            {
-               text: "Call your friend who has a car, because he ain't poor like you.",
+               text: "Call your friend who has a car, because she ain't poor like you.",
                requiredState: currentState => !currentState.Phone,
                nextText: 241
            },
@@ -1072,7 +1072,7 @@ const textNodes = [
             {
                 text: 'Take janitor disguise.',
                 setState: {janitorDisguise: true},
-                text: 268
+                nextText: 268
             }
         ]
     },
