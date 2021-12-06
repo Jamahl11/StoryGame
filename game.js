@@ -734,7 +734,7 @@ const textNodes = [
         options: [
             {
                 text: 'Continue.',
-                nextText: 186
+                nextText: 142
             }
         ]
     },
