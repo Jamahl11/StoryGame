@@ -264,7 +264,7 @@ const textNodes = [
         options: [
             {
                 text: 'Restart.',
-                nextText: -1
+                nextText: 24
             }
         ]
     },
